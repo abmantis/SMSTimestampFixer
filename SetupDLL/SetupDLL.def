@@ -1,0 +1,6 @@
+LIBRARY	"SetupDLL"
+
+EXPORTS
+Install_Init @1
+Uninstall_Init @2
+ 

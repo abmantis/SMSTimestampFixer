@@ -1,0 +1,14 @@
+Description:
+This aims to fix the problem that occur when you use threaded messaging mode, that is sometimes the sms's appearing in the wrong order.
+This was made for the HTC HD2, but should work on other Windows Mobile 6 devices.
+
+Background:
+This problem is due to the fact that HTC Messaging app uses the device time to stamp on a send SMS and uses the server (service provider) time in received SMS and then uses that time to show and order the SMS in the thread mode (I'm not sure if native windows mobile app has this problem too). So if your device time is not in "perfect" sync with the server time sometimes, since the server could be late in comparison to your device, the messages will appear in a wrong order.
+
+What this fix does:
+When a new message arrives, this fix replaces the message time (that comes from the server time) with the device time and this way they will always show in the order they have arrived.
+Also, every time that the device time is more than 1 minute different from the SMS original time, it will show the original SMS time between "[ ]" before the SMS text to let you know that it was sent some time ago.
+This could be usefull if someone sends you a message and it does not arrive at that moment because your device was off (for example), you will see the time at when the sms arrived and not the one at when it was sent.
+It will also show the date if the message was sent more than 24 hours ago.
+
+More info and .cab download: http://forum.xda-developers.com/showthread.php?t=659831
